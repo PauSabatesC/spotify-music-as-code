@@ -16,10 +16,10 @@ resource "spotify_playlist" "playlist" {
   description = var.playlist_description
   public      = false
 
+
   tracks = [
-    data.spotify_track.lady_hear_me_tonight.id,
-    data.spotify_track.baby_im_yours.id,
-    data.spotify_track.if_i_ever_feel_better.id
+    for song in data.spotify_track.song :
+    song.id
   ]
 }
 
