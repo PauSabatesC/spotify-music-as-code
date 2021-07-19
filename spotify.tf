@@ -23,7 +23,10 @@ resource "spotify_playlist" "playlist" {
   ]
 }
 
-
+data "spotify_track" "song" {
+  for_each = toset(local.songs)
+  url      = each.key
+}
 
 
 
