@@ -14,7 +14,7 @@ provider "spotify" {
 resource "spotify_playlist" "playlist" {
   name        = var.playlist_name
   description = var.playlist_description
-  public      = false
+  public      = true
 
 
   tracks = [
